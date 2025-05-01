@@ -12,7 +12,7 @@ const SearchBar = () => {
     }
   };
   return (
-    <div className="relative w-full max-w-sm">
+    <div className="relative w-full ">
       <input
         onKeyDown={(e) => {
           if (e.key === "Enter") handleSubmit();
@@ -24,7 +24,8 @@ const SearchBar = () => {
         id="user-input"
         type="text"
         placeholder="Search for your city..."
-        className="w-full pl-12 pr-4 py-2 border rounded-full shadow-lg focus:outline-none focus:ring dark:text-white dark:bg-dark-gray dark:border-none"
+        autoComplete="off"
+        className="w-full pl-12   py-2 border rounded-full shadow-lg focus:outline-none focus:ring dark:text-white dark:bg-dark-gray dark:border-none"
       />
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-500 size-6" />
     </div>
