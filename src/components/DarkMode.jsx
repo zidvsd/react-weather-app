@@ -29,8 +29,10 @@ const DarkMode = () => {
 
     if (newDarkMode) {
       document.body.classList.add("gray-gradient");
+      document.body.classList.remove("white-gradient");
     } else {
       document.body.classList.remove("gray-gradient");
+      document.body.classList.add("white-gradient");
     }
 
     // Save the theme in localStorage

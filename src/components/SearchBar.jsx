@@ -2,20 +2,27 @@ import React from "react";
 import { Search } from "lucide-react"; // optional: use any icon library
 import { useContext, useState } from "react";
 import { ForecastContext } from "../context/ForecastProvider";
+import { useNavigate } from "react-router-dom";
 const SearchBar = () => {
+  let nav = useNavigate();
+
   const [inputValue, setInputValue] = useState("");
   const { data, loading, error, city, setCity, handleCityChange } =
     useContext(ForecastContext);
   const handleSubmit = () => {
     if (inputValue) {
       handleCityChange(inputValue);
+      nav(`/${inputValue}`);
     }
   };
   return (
     <div className="relative w-full ">
       <input
         onKeyDown={(e) => {
-          if (e.key === "Enter") handleSubmit();
+          if (e.key === "Enter") {
+            handleSubmit();
+            setInputValue("");
+          }
         }}
         onChange={(e) => {
           setInputValue(e.target.value);

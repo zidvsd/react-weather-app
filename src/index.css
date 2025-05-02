@@ -2,12 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-poppins: 'Poppins', 'sans-serif';
   --color-dark-gray: '#1e1e1e';
   --color-gray-custom: '#434343';
   --color-dark-black: '#111111';
-  --color-white-custom: '#d9d9d9';
+  --color-white-500: '#d9d9d9';
   --color-green-custom: '#4cbb17';
+  --font-poppins: 'Poppins', 'sans-serif';
+
   --breakpoint-xl: 80rem;
 }
 
@@ -27,4 +28,8 @@
 
 .gray-gradient {
   @apply bg-gradient-to-l from-[#1e1e1e] to-[#434343];
+}
+
+.white-gradient {
+  @apply bg-gradient-to-l from-[#7d8488] to-[#fbfbfc];
 }
