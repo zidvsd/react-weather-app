@@ -1,14 +1,14 @@
 import React from "react";
 import { Search } from "lucide-react"; // optional: use any icon library
-import { useContext, useState } from "react";
-import { ForecastContext } from "../context/ForecastProvider";
+import useForecast from "../hooks/useForecast";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const SearchBar = () => {
   let nav = useNavigate();
-
-  const [inputValue, setInputValue] = useState("");
   const { data, loading, error, city, setCity, handleCityChange } =
-    useContext(ForecastContext);
+    useForecast();
+  const [inputValue, setInputValue] = useState("");
+
   const handleSubmit = () => {
     if (inputValue) {
       handleCityChange(inputValue);

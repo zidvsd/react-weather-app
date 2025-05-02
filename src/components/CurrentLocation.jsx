@@ -1,10 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
-import { ForecastContext } from "../context/ForecastProvider";
+import React, { useState, useEffect } from "react";
 import { MapPin } from "lucide-react"; // optional: use any icon library
 import useFetch from "../hooks/useFetch";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import useForecast from "../hooks/useForecast";
 const CurrentLocation = () => {
-  const { city, handleCityChange } = useContext(ForecastContext);
+  const { city, handleCityChange } = useForecast();
   const [coords, setCoords] = useState(null);
   const [url, setUrl] = useState(null);
 
