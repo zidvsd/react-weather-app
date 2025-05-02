@@ -3,6 +3,7 @@ import { ForecastContext } from "../context/ForecastProvider";
 import { useContext } from "react";
 import { CapitalizeFirstLetter } from "../utils/HelperFunctions";
 import { time } from "../utils/timeFormat";
+import sunny from "../assets/sunny-icon.svg";
 const TimeCard = () => {
   const { data, loading, error, city } = useContext(ForecastContext);
   const { FormattedTime, dayNum, dayStr, monthStr } = time();
@@ -11,6 +12,7 @@ const TimeCard = () => {
       <h2 className="font-bold text-xl mb-12">{CapitalizeFirstLetter(city)}</h2>
       <h1 className="font-bold text-5xl">{FormattedTime}</h1>
       <p className="dark:text-white">{`${dayStr}, ${dayNum} ${monthStr}`}</p>
+      <img src={sunny} alt="" />
     </div>
   );
 };
